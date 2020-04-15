@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const list = require('../list.json')
+const list = require('./list.json')
 
 let icons = {}
 _.forEach(list, (collection) => {
