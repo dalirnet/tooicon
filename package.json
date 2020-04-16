@@ -24,6 +24,6 @@
   "homepage": "https://github.com/dalirnet/tooicon#readme",
   "devDependencies": {
     "lodash": "^4.17.15",
-    "svgicons2svgfont": "^9.1.1"
+    "xmlbuilder": "^15.1.1"
   }
 }
