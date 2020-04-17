@@ -1,29 +1,31 @@
 {
-  "name": "tooicon",
-  "version": "1.0.0",
-  "description": "Open source icon library",
-  "main": "src/index.js",
-  "scripts": {
-    "map": "node src/map.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dalirnet/tooicon.git"
-  },
-  "keywords": [
-    "icon",
-    "icon library",
-    "icon pack",
-    "web icon"
-  ],
-  "author": "AmirRezaDalir",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dalirnet/tooicon/issues"
-  },
-  "homepage": "https://github.com/dalirnet/tooicon#readme",
-  "devDependencies": {
-    "lodash": "^4.17.15",
-    "xmlbuilder": "^15.1.1"
-  }
+    "name": "tooicon",
+    "version": "1.0.0",
+    "description": "Open source icon library",
+    "main": "src/index.js",
+    "scripts": {
+        "Ai": "node src/Ai.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dalirnet/tooicon.git"
+    },
+    "keywords": [
+        "icon",
+        "icon library",
+        "icon pack",
+        "web icon"
+    ],
+    "author": "AmirRezaDalir",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/dalirnet/tooicon/issues"
+    },
+    "homepage": "https://github.com/dalirnet/tooicon#readme",
+    "devDependencies": {
+        "lodash": "^4.17.15",
+        "svgpath": "^2.2.3",
+        "svgson": "^4.0.0",
+        "xmlbuilder": "^15.1.1"
+    }
 }

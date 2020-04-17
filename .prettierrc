@@ -3,7 +3,7 @@
     "tabWidth": 4,
     "overrides": [
         {
-            "files": ["*.js", "*.vue"],
+            "files": ["*.js"],
             "options": {
                 "singleQuote": true
             }
