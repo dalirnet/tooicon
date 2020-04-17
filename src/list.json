@@ -1,200 +1,188 @@
 {
     "Arrow": {
         "arrow-up": {
-            "line": "M13,7.7l4.8,4.8c0.3,0.3,0.8,0.3,1.1,0l0.3-0.3c0.3-0.3,0.3-0.8,0-1.1l-6.6-6.6c-0.3-0.3-0.8-0.3-1.1,0L4.8,11c-0.3,0.3-0.3,0.8,0,1.1l0.3,0.3c0.3,0.3,0.8,0.3,1.1,0L11,7.7V19c0,0.4,0.4,0.8,0.8,0.8h0.4c0.4,0,0.8-0.4,0.8-0.8V7.7z",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-up-right": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-right": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-down-right": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-down": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-donw-left": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-left": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-up-left": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-up-alt": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-right-alt": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-down-alt": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-left-alt": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-up-down": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-right-left": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-back": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "arrow-forward": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "enter": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         }
     },
     "Building": {
         "home": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "bank": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "building": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
-        "business": {
-            "line": "",
-            "fill": ""
-        },
-        "hotel": {
-            "line": "",
-            "fill": ""
+        "store": {
+            "line": true,
+            "fill": true
         },
         "factory": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         }
     },
     "Business": {
         "copyright": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "network-chart": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "slideshow": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "note": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "task": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "stats": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "analyse": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "chalkboard": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "server": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "pin": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "spreadsheet": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "chart": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "bar-chart": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "bar-chart-alt": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "pie-chart": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "pie-chart-alt": {
-            "line": "",
-            "fill": ""
-        },
-        "line-chart": {
-            "line": "",
-            "fill": ""
-        },
-        "line-chart-alt": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "briefcase": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "paperclip": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "target": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "mail": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "mail-open": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "inbox": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "at": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         }
     },
     "Code": {
@@ -443,10 +431,6 @@
             "fill": ""
         },
         "checklist": {
-            "line": "",
-            "fill": ""
-        },
-        "attachment": {
             "line": "",
             "fill": ""
         },
