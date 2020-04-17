@@ -187,44 +187,48 @@
     },
     "Code": {
         "bug": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "data": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "terminal": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "component": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "package": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
+        },
+        "shield": {
+            "line": true,
+            "fill": true
         },
         "shield-x": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "shield-check": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "bracket": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "branch": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         },
         "code": {
-            "line": "",
-            "fill": ""
+            "line": true,
+            "fill": true
         }
     },
     "Design": {
