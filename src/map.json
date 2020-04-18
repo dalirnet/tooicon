@@ -20,7 +20,7 @@
             "line": "",
             "fill": ""
         },
-        "arrow-donw-left": {
+        "arrow-down-left": {
             "line": "",
             "fill": ""
         },
@@ -329,10 +329,6 @@
     },
     "E-Commerce": {
         "barcode": {
-            "line": "",
-            "fill": ""
-        },
-        "store": {
             "line": "",
             "fill": ""
         },

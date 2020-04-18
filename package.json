@@ -1,6 +1,6 @@
 {
     "name": "tooicon",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A different icon pack",
     "main": "src/index.js",
     "scripts": {

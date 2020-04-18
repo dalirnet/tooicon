@@ -19,12 +19,12 @@
     -moz-osx-font-smoothing: grayscale
 }
 .too-arrow-back.too-fill:before {content: "\e09c";}
-.too-arrow-donw-left.too-fill:before {content: "\e09d";}
+.too-arrow-down-left.too-fill:before {content: "\e09d";}
 .too-arrow-down-alt.too-fill:before {content: "\e09e";}
 .too-arrow-left-alt.too-fill:before {content: "\e09f";}
 .too-arrow-right-alt.too-fill:before {content: "\e0a0";}
 .too-arrow-up-alt.too-fill:before {content: "\e0a1";}
-.too-arrow-donw-right.too-fill:before {content: "\e0a2";}
+.too-arrow-down-right.too-fill:before {content: "\e0a2";}
 .too-arrow-up-left.too-fill:before {content: "\e0a3";}
 .too-arrow-up-right.too-fill:before {content: "\e0a4";}
 .too-arrow-down.too-fill:before {content: "\e0a5";}
@@ -37,8 +37,8 @@
 .too-enter.too-fill:before {content: "\e0ac";}
 .too-arrow-back:before {content: "\e0ad";}
 .too-arrow-forward:before {content: "\e0ae";}
-.too-arrow-donw-left:before {content: "\e0af";}
-.too-arrow-donw-right:before {content: "\e0b0";}
+.too-arrow-down-left:before {content: "\e0af";}
+.too-arrow-down-right:before {content: "\e0b0";}
 .too-arrow-up-right:before {content: "\e0b1";}
 .too-arrow-up-left:before {content: "\e0b2";}
 .too-arrow-down:before {content: "\e0b3";}
@@ -67,7 +67,7 @@
 .too-slideshow.too-fill:before {content: "\e0ca";}
 .too-note.too-fill:before {content: "\e0cb";}
 .too-task.too-fill:before {content: "\e0cc";}
-.too-stat.too-fill:before {content: "\e0cd";}
+.too-stats.too-fill:before {content: "\e0cd";}
 .too-analyse.too-fill:before {content: "\e0ce";}
 .too-chalkboard.too-fill:before {content: "\e0cf";}
 .too-server.too-fill:before {content: "\e0d0";}
@@ -90,7 +90,7 @@
 .too-slideshow:before {content: "\e0e1";}
 .too-note:before {content: "\e0e2";}
 .too-task:before {content: "\e0e3";}
-.too-stat:before {content: "\e0e4";}
+.too-stats:before {content: "\e0e4";}
 .too-analyse:before {content: "\e0e5";}
 .too-chalkboard:before {content: "\e0e6";}
 .too-server:before {content: "\e0e7";}

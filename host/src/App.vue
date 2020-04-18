@@ -5,7 +5,8 @@
                 <div class="header">
                     <h2>
                         <strong>too</strong>
-                        <span>Icon</span>
+                        <span>Ico</span>
+                        <strong>n</strong>
                         <small>A different pack</small>
                     </h2>
                     <input
@@ -22,7 +23,8 @@
 
 <style lang="scss">
 @import '~tooicon/dist/tooIcon.min.css';
-@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai+2:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai+2:400,600&display=swap');
+
 body,
 h1,
 h2,
@@ -34,21 +36,33 @@ h6 {
     padding: 0;
     font-weight: 400;
 }
+
 body {
     background: #f4f8fc;
     line-height: 28px;
     scroll-behavior: smooth;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
+
 body,
 input {
     font-family: 'Baloo Bhai 2', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
+    color: #222831;
 }
+
 input {
     border: none;
     border-radius: 8px;
     padding: 2px 10px 1px 10px;
 }
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
 .container {
     display: flex;
     align-items: flex-start;
@@ -74,7 +88,8 @@ input {
                 border-bottom: 1px solid #e7e7e7;
 
                 input {
-                    margin-bottom: 3px;
+                    position: relative;
+                    bottom: 2px;
                     padding: 4px 10px 3px 10px;
                 }
 
