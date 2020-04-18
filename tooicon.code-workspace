@@ -20,7 +20,6 @@
         "files.exclude": {
             "**/node_modules/**": true,
             "**/host/**": true,
-            "**/dist/**": true
         },
         "[vue]": {
             "editor.formatOnSave": false

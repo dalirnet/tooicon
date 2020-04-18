@@ -11,7 +11,7 @@
                     </h2>
                     <input
                         type="text"
-                        placeholder="Search icons"
+                        :placeholder="`Search ${count} icons`"
                         autocomplete="off"
                     />
                 </div>
@@ -21,6 +21,17 @@
     </div>
 </template>
 
+<script>
+import _ from 'lodash'
+import Icons from 'tooicon/dist/tooIcon.json'
+export default {
+  data () {
+    return {
+      count: _.sum(_.map(Icons, items => _.size(items))) * 2
+    }
+  }
+}
+</script>
 <style lang="scss">
 @import '~tooicon/dist/tooIcon.min.css';
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai+2:400,600&display=swap');

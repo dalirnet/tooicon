@@ -8,7 +8,9 @@
             <h6 class="category-name">
                 <span><strong>#</strong> {{ category }}</span>
                 <span
-                    ><strong>{{ Object.keys(categoryIcons).length }}</strong>
+                    ><strong>{{
+                        Object.keys(categoryIcons).length * 2
+                    }}</strong>
                     Icons</span
                 >
             </h6>
@@ -91,10 +93,30 @@ export default {
         padding: 30px 8px 8px 8px;
         margin: 8px;
         border-radius: 8px;
-        cursor: default;
+        cursor: progress;
 
         &.enable {
+            cursor: default;
             background: #ffffff;
+
+            .icon-name {
+                cursor: pointer;
+            }
+
+            .icon-item {
+                cursor: pointer;
+                &:hover {
+                    background: #f4f8fc;
+
+                    .icon-unicode {
+                        background: #fff;
+                    }
+
+                    .icon-instance {
+                        transform: translateY(2px);
+                    }
+                }
+            }
         }
 
         .icon-name {
@@ -112,7 +134,6 @@ export default {
             text-overflow: ellipsis;
             white-space: nowrap;
             user-select: all;
-            cursor: pointer;
         }
     }
 
@@ -126,19 +147,6 @@ export default {
         padding: 6px;
         border-radius: 4px;
         transition: background 0.3s ease;
-        cursor: pointer;
-
-        &:hover {
-            background: #f4f8fc;
-
-            .icon-unicode {
-                background: #fff;
-            }
-
-            .icon-instance {
-                transform: translateY(2px);
-            }
-        }
 
         .icon-unicode {
             font-size: 12px;
