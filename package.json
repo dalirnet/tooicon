@@ -1,7 +1,7 @@
 {
     "name": "tooicon",
-    "version": "1.0.1",
-    "description": "Open source icon library",
+    "version": "1.0.2",
+    "description": "A different icon pack",
     "main": "src/index.js",
     "scripts": {
         "build": "node src/build.js"
