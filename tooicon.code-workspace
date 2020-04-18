@@ -19,12 +19,23 @@
     "settings": {
         "files.exclude": {
             "**/node_modules/**": true,
-            "**/src/**": true,
             "**/host/**": true,
             "**/dist/**": true
         },
-        "editor.formatOnSave": true,
-        "svg.preview.background": "transparent",
+        "[vue]": {
+            "editor.formatOnSave": false
+        },
+        "vetur.format.defaultFormatter.html": "none",
+        "vetur.format.defaultFormatter.css": "none",
+        "vetur.format.defaultFormatter.scss": "none",
+        "vetur.format.defaultFormatter.js": "none",
+        "eslint.format.enable": true,
+        "editor.formatOnSave": false,
+        "vetur.validation.template": false,
+        "vetur.validation.script": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        },
         "liveServer.settings.multiRootWorkspaceName": "tooicon"
     }
 }

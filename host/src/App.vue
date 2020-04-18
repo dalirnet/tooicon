@@ -1,32 +1,89 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <div class="container">
+            <div class="content">
+                <div class="header">
+                    <h2>
+                        <strong>too</strong>
+                        <span>Icon</span>
+                        <small>A different pack</small>
+                    </h2>
+                    <input
+                        type="text"
+                        placeholder="Search icons"
+                        autocomplete="off"
+                    />
+                </div>
+                <router-view />
+            </div>
+        </div>
     </div>
-    <router-view/>
-  </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import '~tooicon/dist/tooIcon.min.css';
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai+2:400,700&display=swap');
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
 }
+body {
+    background: #f4f8fc;
+    line-height: 28px;
+    scroll-behavior: smooth;
+}
+body,
+input {
+    font-family: 'Baloo Bhai 2', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+input {
+    border: none;
+    border-radius: 8px;
+    padding: 2px 10px 1px 10px;
+}
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 15px;
 
-#nav {
-  padding: 30px;
+    .content {
+        max-width: 1100px;
+        display: flex;
+        flex: 1;
+        justify-content: space-around;
+        flex-direction: column;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+        > div {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 5px 0;
 
-    &.router-link-exact-active {
-      color: #42b983;
+            &.header {
+                border-bottom: 1px solid #e7e7e7;
+
+                input {
+                    margin-bottom: 3px;
+                    padding: 4px 10px 3px 10px;
+                }
+
+                h2 small {
+                    font-size: 12px;
+                    margin: 0 5px;
+                }
+            }
+        }
     }
-  }
 }
 </style>

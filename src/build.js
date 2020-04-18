@@ -23,6 +23,7 @@ const setting = {
     },
     unicode: 57500,
 }
+const map = require('./map.json')
 const svg = fs.readFileSync(path.join(__dirname, 'icons.svg'), 'utf8')
 let xmlFont = xmlbuilder
     .begin({
@@ -92,6 +93,14 @@ parse(svg).then((json) => {
                 _.forEach(icons, ({ attributes: { id, d } }) => {
                     const name = id.replace(/_[\d_]+$/g, '')
                     const unicode = setting.unicode + index
+                    const categoryId = _.upperFirst(category)
+                    if (
+                        _.has(map, categoryId) &&
+                        _.has(map[categoryId], name) &&
+                        _.has(map[categoryId][name], type)
+                    ) {
+                        map[categoryId][name][type] = unicode
+                    }
                     cssRule.push(
                         `.too-${
                             name + (type == 'fill' ? '.too-fill' : '')
@@ -158,6 +167,10 @@ parse(svg).then((json) => {
     fs.writeFileSync(
         path.join(__dirname, `../dist/font/${setting.font.name}.woff2`),
         woff2Builder(ttfFont.buffer)
+    )
+    fs.writeFileSync(
+        path.join(__dirname, `../dist/${setting.font.name}.json`),
+        JSON.stringify(map)
     )
     const cssFile = (css + cssRule.join('\n')).trim()
     fs.writeFileSync(
