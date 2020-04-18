@@ -1,10 +1,10 @@
 {
     "name": "tooicon",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Open source icon library",
     "main": "src/index.js",
     "scripts": {
-        "Ai": "node src/Ai.js"
+        "build": "node src/build.js"
     },
     "repository": {
         "type": "git",

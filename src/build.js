@@ -13,6 +13,7 @@ const { parse } = require('svgson')
 const setting = {
     author: 'AmirRezaDalir',
     url: 'https://github.com/dalirnet/tooicon',
+    version: process.env.npm_package_version,
     icon: {
         size: 24,
     },
@@ -35,7 +36,11 @@ let xmlFont = xmlbuilder
         'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'
     )
     .up()
-    .ele('svg', { xmlns: 'http://www.w3.org/2000/svg' })
+    .ele('svg', {
+        xmlns: 'http://www.w3.org/2000/svg',
+        'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+        version: setting.version,
+    })
     .ele('metadata', setting.font.name)
     .up()
     .ele('defs')
