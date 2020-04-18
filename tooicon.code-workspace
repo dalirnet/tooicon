@@ -9,6 +9,10 @@
             "path": "dist"
         },
         {
+            "name": "host",
+            "path": "host"
+        },
+        {
             "path": "."
         }
     ],
@@ -16,6 +20,7 @@
         "files.exclude": {
             "**/node_modules/**": true,
             "**/src/**": true,
+            "**/host/**": true,
             "**/dist/**": true
         },
         "editor.formatOnSave": true,
