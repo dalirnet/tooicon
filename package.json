@@ -23,9 +23,15 @@
     },
     "homepage": "https://github.com/dalirnet/tooicon#readme",
     "devDependencies": {
+        "@node-minify/clean-css": "^5.3.0",
+        "@node-minify/core": "^5.3.0",
         "lodash": "^4.17.15",
+        "svg2ttf": "^4.3.0",
         "svgpath": "^2.2.3",
         "svgson": "^4.0.0",
+        "ttf2eot": "^2.0.0",
+        "ttf2woff": "^2.0.1",
+        "ttf2woff2": "^3.0.0",
         "xmlbuilder": "^15.1.1"
     }
 }

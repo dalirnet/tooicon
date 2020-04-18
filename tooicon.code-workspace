@@ -19,6 +19,7 @@
             "**/dist/**": true
         },
         "editor.formatOnSave": true,
-        "svg.preview.background": "transparent"
+        "svg.preview.background": "transparent",
+        "liveServer.settings.multiRootWorkspaceName": "tooicon"
     }
 }
