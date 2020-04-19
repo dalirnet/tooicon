@@ -21,7 +21,11 @@
                         :key="iconKey"
                     >
                         <span class="icon-name">{{ iconKey }}</span>
-                        <div class="icon-item" v-if="icon.line">
+                        <div
+                            class="icon-item"
+                            v-if="icon.line"
+                            @click="$emit('show', iconKey, icon.line)"
+                        >
                             <span class="icon-instance">
                                 <i :class="`too-${iconKey}`"></i>
                             </span>
@@ -32,7 +36,11 @@
                                 }}</span>
                             </span>
                         </div>
-                        <div class="icon-item" v-if="icon.fill">
+                        <div
+                            class="icon-item"
+                            v-if="icon.fill"
+                            @click="$emit('show', iconKey, icon.fill)"
+                        >
                             <span class="icon-instance">
                                 <i
                                     :class="`too-${iconKey}`"
@@ -164,7 +172,6 @@ export default {
             padding: 2px 4px;
             line-height: 12px;
             transition: background 0.3s ease;
-            user-select: all;
 
             .small {
                 display: inline-block;

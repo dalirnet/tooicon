@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" :class="{ dialogOpen: dialog }">
         <div class="container">
             <div class="content">
                 <div class="header">
@@ -16,7 +16,7 @@
                         v-model="search"
                     />
                 </div>
-                <List :icons="icons" :search="search" />
+                <List :icons="icons" @show="show" />
                 <div class="footer">
                     <span>
                         <strong>A </strong>
@@ -44,6 +44,106 @@
                 </div>
             </div>
         </div>
+        <div class="dialog">
+            <div class="box">
+                <h2>
+                    <strong>too</strong>
+                    <span>Ico</span>
+                    <strong>n</strong>
+                    <small>A different pack</small>
+                </h2>
+                <div class="item">
+                    <p class="title">
+                        <strong>- NPM</strong>
+                    </p>
+                    <p class="caption">
+                        <small># Install with terminal</small>
+                    </p>
+                    <div class="code">
+                        <span style="color: #f08d49">npm</span>
+                        <span class="space"></span>
+                        <span style="color: #f08d49">install</span>
+                        <span class="space"></span>
+                        <span>tooicon</span>
+                        <span class="space"></span>
+                        <span style="color: #999;">--save</span>
+                    </div>
+                    <p class="caption">
+                        <small># Import</small>
+                    </p>
+                    <div class="code">
+                        <span style="color: #cc99cd;">import</span>
+                        <span class="space"></span>
+                        <span style="color: #7ec699;">
+                            <span>"tooicon/dist/tooIcon.min.css"</span>
+                        </span>
+                    </div>
+                    <p class="title"><strong>- CDN</strong></p>
+                    <p class="caption"><small># unpkg.com</small></p>
+                    <div class="code">
+                        <span style="color: #ccc;">&lt;</span>
+                        <span style="color: #e2777a;">link</span>
+                        <span class="space"></span>
+                        <span style="color: #e2777a;">href</span>
+                        <span style="color: #ccc;">="</span>
+                        <span style="color: #7ec699;"
+                            >https://unpkg.com/tooicon/dist/tooIcon.min.css</span
+                        >
+                        <span style="color: #ccc;">"</span>
+                        <span class="space"></span>
+                        <span style="color: #e2777a;">rel</span>
+                        <span style="color: #ccc;">="</span>
+                        <span style="color: #7ec699;">stylesheet</span>
+                        <span style="color: #ccc;">"&gt;</span>
+                    </div>
+                    <p class="title"><strong>- Use</strong></p>
+                    <p class="caption"><small># line style</small></p>
+                    <div class="code">
+                        <span style="color: #ccc;">&lt;</span>
+                        <span style="color: #e2777a;">i</span>
+                        <span class="space"></span>
+                        <span style="color: #e2777a;">class</span>
+                        <span style="color: #ccc;">="</span>
+                        <span style="color: #7ec699;">too-home</span>
+                        <span style="color: #ccc;">"&gt;&lt;/</span>
+                        <span style="color: #e2777a;">i</span>
+                        <span style="color: #ccc;">&gt;</span>
+                    </div>
+                    <p class="caption"><small># fill style</small></p>
+                    <div class="code">
+                        <span style="color: #ccc;">&lt;</span>
+                        <span style="color: #e2777a;">i</span>
+                        <span class="space"></span>
+                        <span style="color: #e2777a;">class</span>
+                        <span style="color: #ccc;">="</span>
+                        <span style="color: #7ec699;">too-home too-fill</span>
+                        <span style="color: #ccc;">"&gt;&lt;/</span>
+                        <span style="color: #e2777a;">i</span>
+                        <span style="color: #ccc;">&gt;</span>
+                    </div>
+                    <p class="title"><strong>- Contribution</strong></p>
+                    <p class="caption">
+                        <small
+                            ># for report a bug, suggestions or a feature
+                            request create a new issue on
+                            <a href="https://github.com/dalirnet/tooicon/issues"
+                                ><strong>Github</strong></a
+                            ></small
+                        >
+                    </p>
+                    <p class="title"><strong>- License</strong></p>
+                    <p class="caption">
+                        <small
+                            ># tooIcon is an open source project and licensed
+                            under the <strong>MIT License</strong></small
+                        >
+                    </p>
+                </div>
+            </div>
+            <span class="toggle" @click="toogle">
+                <i class="too-arrow-right too-fill"></i>
+            </span>
+        </div>
     </div>
 </template>
 
@@ -58,6 +158,7 @@ export default {
   data () {
     return {
       search: '',
+      dialog: false,
       count: _.sum(_.map(tooIcon, items => _.size(items))) * 2
     }
   },
@@ -82,6 +183,15 @@ export default {
       })
       return icons
     }
+  },
+  methods: {
+    toogle () {
+      this.dialog = !this.dialog
+    },
+    show (name, unicode) {
+      this.dialog = true
+      console.log(name, unicode)
+    }
   }
 }
 </script>
@@ -90,6 +200,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai+2:400,600&display=swap');
 
 body,
+p,
 h1,
 h2,
 h3,
@@ -107,6 +218,7 @@ body {
     scroll-behavior: smooth;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
 }
 
 body,
@@ -130,11 +242,33 @@ select:focus {
     outline: none;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    &:hover,
+    &:active,
+    &:visited {
+        color: inherit;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+h2 small {
+    font-size: 12px;
+    margin: 0 5px;
+}
+
 .container {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     padding: 20px 15px;
+    transition: transform 0.4s ease;
+    transform-origin: top right;
 
     .content {
         max-width: 1100px;
@@ -159,11 +293,6 @@ select:focus {
                     bottom: 2px;
                     padding: 4px 10px 3px 10px;
                 }
-
-                h2 small {
-                    font-size: 12px;
-                    margin: 0 5px;
-                }
             }
 
             &.footer {
@@ -176,6 +305,109 @@ select:focus {
                     height: 18px;
                 }
             }
+        }
+    }
+}
+
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 590px;
+    max-width: 90%;
+    background: #f4f8fc;
+    transform: translateX(-100%);
+    box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0);
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 28px;
+        bottom: -10%;
+        top: -10%;
+        right: -14px;
+        background: #f4f8fc;
+        border-radius: 50%;
+    }
+
+    .code {
+        font-size: 14px;
+        background: #3f3d56;
+        color: #fff;
+        padding: 7px 10px;
+        border-radius: 4px;
+        word-break: break-all;
+        .space {
+            margin: 0 3px;
+        }
+    }
+
+    .title {
+        margin-top: 20px;
+        padding: 0 5px;
+    }
+    .caption {
+        padding: 0 5px;
+    }
+
+    .box {
+        position: absolute;
+        display: flex;
+        top: 16px;
+        left: 16px;
+        bottom: 16px;
+        right: 8px;
+        padding: 0 24px;
+        box-sizing: border-box;
+        border-left: solid 2px #fff;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h2 {
+            padding-top: 50px;
+        }
+
+        .item {
+            width: 100%;
+            flex: 1;
+            padding-bottom: 60px;
+            overflow-y: auto;
+        }
+    }
+
+    .toggle {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: -68px;
+        bottom: 14px;
+        width: 48px;
+        height: 48px;
+        background: #fff;
+        text-align: center;
+        box-sizing: border-box;
+        border-radius: 50%;
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.05);
+        transition: all 0.4s 0.4s ease;
+        line-height: 0;
+        cursor: pointer;
+    }
+}
+
+.dialogOpen {
+    .container {
+        transform: scale(0.95);
+    }
+    .dialog {
+        transform: translateX(0);
+        box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.3);
+
+        .toggle {
+            transform: rotate(180deg);
         }
     }
 }
