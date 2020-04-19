@@ -1,65 +1,73 @@
 <template>
     <div class="icon">
         <div
-            v-for="(categoryIcons, category) in icons"
-            :key="category"
+            v-for="(category, categoryKey) in icons"
+            :key="categoryKey"
             class="category"
         >
-            <h6 class="category-name">
-                <span><strong>#</strong> {{ category }}</span>
-                <span
-                    ><strong>{{
-                        Object.keys(categoryIcons).length * 2
-                    }}</strong>
-                    Icons</span
-                >
-            </h6>
-            <div class="icon-parent-box">
-                <div
-                    v-for="(type, name) in categoryIcons"
-                    class="icon-box"
-                    :class="{ enable: type.line }"
-                    :key="name"
-                >
-                    <span class="icon-name">{{ name }}</span>
-                    <div class="icon-item">
-                        <span class="icon-instance">
-                            <i :class="`too-${name}`"></i>
-                        </span>
-                        <span class="icon-unicode">
-                            <span class="small">&amp;#X</span>
-                            <span>{{
-                                type.line.toString(16).toUpperCase()
-                            }}</span>
-                        </span>
-                    </div>
-                    <div class="icon-item" v-if="type.fill">
-                        <span class="icon-instance">
-                            <i :class="`too-${name}`" class="too-fill"></i>
-                        </span>
-                        <span class="icon-unicode">
-                            <span class="small">&amp;#X</span>
-                            <span>{{
-                                type.fill.toString(16).toUpperCase()
-                            }}</span>
-                        </span>
+            <template v-if="Object.keys(category).length">
+                <h6 class="category-name">
+                    <span><strong>#</strong> {{ categoryKey }}</span>
+                    <span
+                        ><strong>{{ Object.keys(category).length * 2 }}</strong>
+                        Icons</span
+                    >
+                </h6>
+                <div class="icon-parent-box">
+                    <div
+                        v-for="(icon, iconKey) in category"
+                        class="icon-box"
+                        :class="{ enable: icon.line || icon.fill }"
+                        :key="iconKey"
+                    >
+                        <span class="icon-name">{{ iconKey }}</span>
+                        <div class="icon-item" v-if="icon.line">
+                            <span class="icon-instance">
+                                <i :class="`too-${iconKey}`"></i>
+                            </span>
+                            <span class="icon-unicode">
+                                <span class="small">&amp;#X</span>
+                                <span>{{
+                                    icon.line.toString(16).toUpperCase()
+                                }}</span>
+                            </span>
+                        </div>
+                        <div class="icon-item" v-if="icon.fill">
+                            <span class="icon-instance">
+                                <i
+                                    :class="`too-${iconKey}`"
+                                    class="too-fill"
+                                ></i>
+                            </span>
+                            <span class="icon-unicode">
+                                <span class="small">&amp;#X</span>
+                                <span>{{
+                                    icon.fill.toString(16).toUpperCase()
+                                }}</span>
+                            </span>
+                        </div>
+                        <div class="icon-item" v-if="!icon.line && !icon.fill">
+                            <span class="icon-instance"></span>
+                            <span class="icon-unicode">
+                                <strong>too</strong>
+                                <span>Ico</span>
+                                <strong>n</strong>
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </template>
         </div>
     </div>
 </template>
 
 <script>
-import Icons from 'tooicon/dist/tooIcon.json'
 export default {
-  data () {
-    return {
-      icons: Icons
+  props: {
+    icons: {
+      type: Object,
+      required: true
     }
-  },
-  created () {
-    console.log(Icons)
   }
 }
 </script>
