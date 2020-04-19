@@ -1,6 +1,6 @@
 tooIcon [![npm](https://img.shields.io/npm/v/tooicon.svg?labelColor=4A4A4A&color=006AFF)](https://www.npmjs.com/package/tooicon)
 =========
-A different icon pack
+[A different icon pack](https://dalirnet.github.io/tooicon/index.html)
 
 
 ### - NPM
