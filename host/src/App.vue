@@ -13,6 +13,7 @@
                         type="text"
                         :placeholder="`Search ${count} icons`"
                         autocomplete="off"
+                        style="width: 110px;"
                         v-model="search"
                     />
                 </div>
