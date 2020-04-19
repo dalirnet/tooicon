@@ -1,6 +1,6 @@
 ![tooicon](https://github.com/dalirnet/tooicon/raw/master/src/card.png)
 # tooIcon [![npm](https://img.shields.io/npm/v/tooicon.svg?labelColor=4A4A4A&color=006AFF)](https://www.npmjs.com/package/tooicon)
-[A different icon pack](https://dalirnet.github.io/tooicon/index.html)
+[A different icon pack (Alpha)](https://dalirnet.github.io/tooicon/index.html)
 
 
 ### - NPM
@@ -9,7 +9,7 @@
 npm install tooicon --save
 ```
 
-> Import
+* Import
 ```javascript
 import "tooicon/dist/tooIcon.min.css"
 ```
