@@ -52,7 +52,7 @@
                     <strong>n</strong>
                     <small>A different pack</small>
                 </h2>
-                <div class="item">
+                <div class="item" v-if="!selectedIcon.status">
                     <p class="title">
                         <strong>- NPM</strong>
                     </p>
@@ -139,6 +139,38 @@
                         >
                     </p>
                 </div>
+                <div class="item center" v-if="selectedIcon.status">
+                    <div class="demo">
+                        <i
+                            :class="[
+                                `too-${selectedIcon.name}`,
+                                { 'too-fill': selectedIcon.fill }
+                            ]"
+                        ></i>
+                    </div>
+                    <p
+                        class="caption"
+                        style="margin-top: -28px;z-index: 1;font-size: 12px;"
+                    >
+                        <span
+                            >&amp;#X{{
+                                selectedIcon.unicode.toString(16).toUpperCase()
+                            }}</span
+                        >
+                    </p>
+                    <p class="title">
+                        <strong>too-{{ selectedIcon.name }}</strong>
+                        <template v-if="selectedIcon.fill">
+                            <span class="space"> </span>
+                            <strong>too-fill</strong>
+                        </template>
+                    </p>
+                    <a class="btn" :href="`https://unpkg.com/tooicon/dist/svg/${this.selectedIcon.fill ? 'fill' : 'line'}/${this.selectedIcon.name}.svg`" :download="`tooicon-${this.selectedIcon.fill ? 'fill' : 'line'}-${this.selectedIcon.name}.svg`">
+                        <span>download</span>
+                        <span class="space"> </span>
+                        <strong>SVG</strong>
+                    </a>
+                </div>
             </div>
             <span class="toggle" @click="toogle">
                 <i class="too-arrow-right too-fill"></i>
@@ -157,9 +189,15 @@ export default {
   },
   data () {
     return {
+      count: _.sum(_.map(tooIcon, items => _.size(items))) * 2,
       search: '',
       dialog: false,
-      count: _.sum(_.map(tooIcon, items => _.size(items))) * 2
+      selectedIcon: {
+        status: false,
+        name: '',
+        unicode: '',
+        fill: false
+      }
     }
   },
   computed: {
@@ -186,80 +224,26 @@ export default {
   },
   methods: {
     toogle () {
+      if (!this.dialog) {
+        this.selectedIcon.status = false
+      }
       this.dialog = !this.dialog
     },
-    show (name, unicode) {
+    show (name, unicode, type) {
       this.dialog = true
-      console.log(name, unicode)
+      this.selectedIcon = {
+        status: true,
+        unicode,
+        name,
+        fill: type === 'fill'
+      }
     }
   }
 }
 </script>
 <style lang="scss">
-@import '~tooicon/dist/tooIcon.min.css';
-@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai+2:400,600&display=swap');
-
-body,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-    padding: 0;
-    font-weight: 400;
-}
-
-body {
-    background: #f4f8fc;
-    line-height: 28px;
-    scroll-behavior: smooth;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    overflow-x: hidden;
-}
-
-body,
-input {
-    font-family: 'Baloo Bhai 2', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    color: #222831;
-}
-
-input,
-textarea,
-select {
-    border: none;
-    border-radius: 8px;
-    padding: 2px 10px 1px 10px;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    &:hover,
-    &:active,
-    &:visited {
-        color: inherit;
-    }
-}
-
-::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-h2 small {
-    font-size: 12px;
-    margin: 0 5px;
+.space {
+    margin: 0 3px;
 }
 
 .container {
@@ -339,17 +323,29 @@ h2 small {
         padding: 7px 10px;
         border-radius: 4px;
         word-break: break-all;
-        .space {
-            margin: 0 3px;
-        }
     }
 
     .title {
         margin-top: 20px;
         padding: 0 5px;
     }
+
     .caption {
         padding: 0 5px;
+
+        .small {
+            display: inline-block;
+            transform: scale(0.8);
+        }
+    }
+
+    .btn {
+        margin: 20px 10px;
+        padding: 5px 10px 4px 10px;
+        border-radius: 8px;
+        background: #3f3d56;
+        color: #fff;
+        cursor: pointer;
     }
 
     .box {
@@ -371,10 +367,38 @@ h2 small {
         }
 
         .item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             width: 100%;
             flex: 1;
             padding-bottom: 60px;
             overflow-y: auto;
+
+            &.center {
+                align-items: center;
+            }
+        }
+    }
+
+    .demo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 240px;
+        height: 240px;
+        margin-top: 48px;
+        background-image: linear-gradient(45deg, #fff 25%, transparent 25%),
+            linear-gradient(-45deg, #fff 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #fff 75%),
+            linear-gradient(-45deg, transparent 75%, #fff 75%);
+        background-size: 20px 20px;
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+
+        i {
+            font-size: 120px;
         }
     }
 

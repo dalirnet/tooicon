@@ -24,7 +24,7 @@
                         <div
                             class="icon-item"
                             v-if="icon.line"
-                            @click="$emit('show', iconKey, icon.line)"
+                            @click="$emit('show', iconKey, icon.line, 'line')"
                         >
                             <span class="icon-instance">
                                 <i :class="`too-${iconKey}`"></i>
@@ -39,7 +39,7 @@
                         <div
                             class="icon-item"
                             v-if="icon.fill"
-                            @click="$emit('show', iconKey, icon.fill)"
+                            @click="$emit('show', iconKey, icon.fill, 'fill')"
                         >
                             <span class="icon-instance">
                                 <i
