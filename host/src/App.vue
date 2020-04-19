@@ -165,7 +165,7 @@
                             <strong>too-fill</strong>
                         </template>
                     </p>
-                    <a class="btn" :href="`https://unpkg.com/tooicon/dist/svg/${this.selectedIcon.fill ? 'fill' : 'line'}/${this.selectedIcon.name}.svg`" :download="`tooicon-${this.selectedIcon.fill ? 'fill' : 'line'}-${this.selectedIcon.name}.svg`">
+                    <a class="btn" :href="`https://dalirnet.github.io/tooicon/dist/svg/${this.selectedIcon.fill ? 'fill' : 'line'}/${this.selectedIcon.name}.svg`" :download="`tooicon-${this.selectedIcon.fill ? 'fill' : 'line'}-${this.selectedIcon.name}.svg`">
                         <span>download</span>
                         <span class="space"> </span>
                         <strong>SVG</strong>
