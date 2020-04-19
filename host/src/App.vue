@@ -299,7 +299,7 @@ export default {
     left: 0;
     bottom: 0;
     width: 590px;
-    max-width: 90%;
+    max-width: 80%;
     background: #f4f8fc;
     transform: translateX(-100%);
     box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0);
