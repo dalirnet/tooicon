@@ -82,6 +82,18 @@ let css = `
 let cssRule = []
 parse(svg).then((json) => {
     let index = 0
+    
+    let defaultDirectories = [
+        path.join(__dirname, '../dist/font'),
+        path.join(__dirname, '../dist/svg/fill'),
+        path.join(__dirname, '../dist/svg/line'),
+    ]
+    _.forEach(defaultDirectories, (directory) => {
+        if (!fs.existsSync(directory)) {
+            fs.mkdirSync(directory, { recursive: true })
+        }
+    })
+
     _.forEach(
         _.filter(
             json.children,
