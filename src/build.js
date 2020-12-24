@@ -82,6 +82,18 @@ let css = `
 let cssRule = []
 parse(svg).then((json) => {
     let index = 0
+    
+    let defaultDirectories = [
+        path.join(__dirname, '../dist/font'),
+        path.join(__dirname, '../dist/svg/fill'),
+        path.join(__dirname, '../dist/svg/line'),
+    ]
+    _.forEach(defaultDirectories, (directory) => {
+        if (!fs.existsSync(directory)) {
+            fs.mkdirSync(directory, { recursive: true })
+        }
+    })
+
     _.forEach(
         _.filter(
             json.children,
@@ -158,11 +170,11 @@ parse(svg).then((json) => {
     )
     fs.writeFileSync(
         path.join(__dirname, `../dist/font/${setting.font.name}.eot`),
-        eotBuilder(ttfFont.buffer)
+        _.toString(eotBuilder(ttfFont.buffer))
     )
     fs.writeFileSync(
         path.join(__dirname, `../dist/font/${setting.font.name}.woff`),
-        woffBuilder(ttfFont.buffer)
+        _.toString(woffBuilder(ttfFont.buffer))
     )
     fs.writeFileSync(
         path.join(__dirname, `../dist/font/${setting.font.name}.woff2`),
