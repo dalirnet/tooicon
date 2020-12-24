@@ -158,11 +158,11 @@ parse(svg).then((json) => {
     )
     fs.writeFileSync(
         path.join(__dirname, `../dist/font/${setting.font.name}.eot`),
-        eotBuilder(ttfFont.buffer)
+        _.toString(eotBuilder(ttfFont.buffer))
     )
     fs.writeFileSync(
         path.join(__dirname, `../dist/font/${setting.font.name}.woff`),
-        woffBuilder(ttfFont.buffer)
+        _.toString(woffBuilder(ttfFont.buffer))
     )
     fs.writeFileSync(
         path.join(__dirname, `../dist/font/${setting.font.name}.woff2`),
